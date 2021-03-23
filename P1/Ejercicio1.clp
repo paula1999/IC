@@ -134,7 +134,6 @@
    (hombre ?z)
  =>
    (printout t "El " ?x " de " ?y " es " ?z crlf)
-   (assert (hay_relacion))
 )
 
 (defrule relacionparentescofemenino
