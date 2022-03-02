@@ -1,3 +1,4 @@
+; Paula Villanueva
 ;;;;;;; JUGADOR DE 4 en RAYA ;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ;;;;;;;;;; Version de 4 en raya clásico: Tablero de 6x7, donde se introducen fichas por arriba
@@ -495,7 +496,6 @@
 )
 =>
 (assert (conectado Juego h ?f1 ?c1 ?f2 ?c2 ?v1))
-;(printout t "El jugador " ?v1 " tiene 2 en linea de forma h: " ?c1 ?c2 crlf)
 )
 
 ; Regla para deducir si hay dos fichas conectadas de forma vertical
@@ -518,7 +518,6 @@
 )
 =>
 (assert (conectado Juego v ?f1 ?c1 ?f2 ?c2 ?v1))
-;(printout t "El jugador " ?v1 " tiene 2 en linea de forma v: " ?c1 ?c2 crlf)
 )
 
 ; Regla para deducir si hay dos fichas conectadas de forma diagonal
@@ -541,7 +540,6 @@
 )
 =>
 (assert (conectado Juego d1 ?f1 ?c1 ?f2 ?c2 ?v1))
-;(printout t "El jugador " ?v1 " tiene 2 en linea de forma d1: " ?c1 ?c2 crlf)
 )
 
 ; Regla para deducir si hay dos fichas conectadas de forma diagonal inversa
@@ -564,8 +562,6 @@
 )
 =>
 (assert (conectado Juego d2 ?f1 ?c1 ?f2 ?c2 ?v1))
-;(printout t "El jugador " ?v1 " tiene 2 en linea de forma d2: " ?c1 ?c2 crlf)
-
 )
 
 ; Ejercicio 4: reglas para deducir si hay tres fichas de un mismo jugador en linea en una direccion y posiciones concretas
@@ -597,7 +593,6 @@
 )
 =>
 (assert (3_en_linea Juego h ?f1 ?c1 ?f4 ?c4 ?v1))
-;(printout t "El jugador " ?v1 " tiene 3 en linea de forma h: " ?c1 ?c2 ?c3 ?c4 crlf)
 (retract ?h1) ; ya sabemos que dos fichas estan en linea
 (retract ?h2) ; ya sabemos que dos fichas estan en linea
 )
@@ -630,7 +625,6 @@
 )
 =>
 (assert (3_en_linea Juego v ?f1 ?c1 ?f4 ?c4 ?v1))
-;(printout t "El jugador " ?v1 " tiene 3 en linea de forma v: " ?c1 ?c2 ?c3 ?c4 crlf)
 (retract ?h1) ; ya sabemos que dos fichas estan en linea
 (retract ?h2) ; ya sabemos que dos fichas estan en linea
 )
@@ -664,7 +658,6 @@
 )
 =>
 (assert (3_en_linea Juego d1 ?f1 ?c1 ?f4 ?c4 ?v1))
-;(printout t "El jugador " ?v1 " tiene 3 en linea de forma d1: " ?c1 ?c2 ?c3 ?c4 crlf)
 (retract ?h1) ; ya sabemos que dos fichas estan en linea
 (retract ?h2) ; ya sabemos que dos fichas estan en linea
 )
@@ -698,7 +691,6 @@
 )
 =>
 (assert (3_en_linea Juego d2 ?f1 ?c1 ?f4 ?c4 ?v1))
-;(printout t "El jugador " ?v1 " tiene 3 en linea de forma d2: " ?c1 ?c2 ?c3 ?c4 crlf)
 (retract ?h1) ; ya sabemos que dos fichas estan en linea
 (retract ?h2) ; ya sabemos que dos fichas estan en linea
 )
@@ -726,7 +718,6 @@
     )
 )
 =>
-;(printout t "El jugador " ?v " ganaria de forma horizontal si jugara en " ?c1 ?c2 ?c3 crlf)
 (assert (ganaria ?v ?c3))
 )
 
@@ -746,7 +737,6 @@
     )
 )
 =>
-;(printout t "El jugador " ?v " ganaria de forma vertical si jugara en " ?c1 ?c2 ?c3 crlf)
 (assert (ganaria ?v ?c3))
 )
 
@@ -771,7 +761,6 @@
     )
 )
 =>
-;(printout t "El jugador " ?v " ganaria de forma diagonal si jugara en " ?c1 ?c2 ?c3 crlf)
 (assert (ganaria ?v ?c3))
 )
 
@@ -796,7 +785,6 @@
     )
 )
 =>
-;(printout t "El jugador " ?v " ganaria de forma diagonal inversa si jugara en " ?c1 ?c2 ?c3 crlf)
 (assert (ganaria ?v ?c3))
 )
 

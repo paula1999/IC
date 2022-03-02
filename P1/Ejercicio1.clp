@@ -1,3 +1,4 @@
+; Paula Villanueva
 ;;;; HECHOS GENERALES DEL SISTEMA ;;;;;
 ;;;;(seran validos para todas las ejecuciones del sistema ;;;;
 
@@ -112,7 +113,7 @@
 (declare (salience 1000))
 =>
    (printout t "Dime el parentesco de la persona de la Familia Villanueva sobre la que quieres informacion [hijo, padre, abuelo, nieto, hermano, esposo, primo, tio, sobrino, cuniado, yerno, suegro]: " crlf)
-   (assert (parentesco (read)))
+   (assert (parentesco (upcase (read))))
 )
 
 ;;;;; Solicitamos el nombre de la persona sobre el que se desea informacion y guardamos y aniadimos ese hecho 
@@ -127,6 +128,7 @@
 
 ;;;;; Hacemos que nos diga por pantalla las personas que tienen la relacion introducida con la persona introducida
 
+; Si el sujeto es un hombre y tiene una relacion con la persona
 (defrule relacionparentescomasculino
    (parentesco ?x)		
    (personanombre ?y)
@@ -136,6 +138,7 @@
    (printout t "El " ?x " de " ?y " es " ?z crlf)
 )
 
+; Si el sujeto es una mujer y tiene una relacion con la persona, ponemos la relacion en femenino
 (defrule relacionparentescofemenino
    (parentesco ?x)		
    (personanombre ?y)
@@ -146,6 +149,7 @@
    (printout t "La " ?t " de " ?y " es " ?z crlf)
 )
 
+; Si nadie tiene relacion con la persona
 (defrule norelacionparentesco
    (parentesco ?x)		
    (personanombre ?y)

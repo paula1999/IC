@@ -235,7 +235,7 @@
     =>
     
     (retract ?r)
-    (printout t "ERROR. Introduce de nuevo una nota valida" crlf)
+    (printout t "ERROR. Introduce de nuevo una nota valida" ?nota  (type ?nota) crlf)
     (assert (pregunta nota))
 )
 
@@ -315,7 +315,7 @@
     (assert (rNota BAJA))
 )
 
-; Si la nota esta entre 6 y 8, la consideramos como nota Normal
+; Si la nota esta entre 6 y 8, la consideramos como nota Media
 (defrule ajustarNotaMedia
     (declare (salience 998))
     (Modulo MPreguntas)
@@ -337,7 +337,7 @@
     =>
 
     (retract ?r)
-    (assert (rNota NORMAL))
+    (assert (rNota MEDIA))
 )
 
 ; Si la nota esta entre 8 y 10, la consideramos como nota Alta
